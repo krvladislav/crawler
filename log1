@@ -1,0 +1,199 @@
+Extractor total_time=2893 effective_time=2890 max_delay=1
+Fetcher(0) total_time=5454 effective_time=5377 loss 77 [1.41181%]
+Fetcher(1) total_time=2916 effective_time=2754 loss 162 [5.55556%]
+Fetcher(2) total_time=5109 effective_time=4746 loss 363 [7.10511%]
+Fetcher(3) total_time=2959 effective_time=2458 loss 501 [16.9314%]
+Fetcher(4) total_time=2904 effective_time=2712 loss 192 [6.61157%]
+Fetcher(5) total_time=4826 effective_time=4310 loss 516 [10.6921%]
+Fetcher(6) total_time=3238 effective_time=2718 loss 520 [16.0593%]
+Fetcher(7) total_time=3024 effective_time=2487 loss 537 [17.7579%]
+Fetcher(8) total_time=5222 effective_time=4691 loss 531 [10.1685%]
+Fetcher(9) total_time=5033 effective_time=4502 loss 531 [10.5504%]
+Total time: 5455
+Average loss: 393
+Extractor total_time=3188 effective_time=3184 max_delay=1
+Fetcher(0) total_time=3204 effective_time=3086 loss 118 [3.6829%]
+Fetcher(1) total_time=4202 effective_time=4045 loss 157 [3.73632%]
+Fetcher(2) total_time=4722 effective_time=4525 loss 197 [4.17196%]
+Fetcher(3) total_time=3796 effective_time=3312 loss 484 [12.7503%]
+Fetcher(4) total_time=3526 effective_time=3344 loss 182 [5.16166%]
+Fetcher(5) total_time=3339 effective_time=2832 loss 507 [15.1842%]
+Fetcher(6) total_time=3573 effective_time=3066 loss 507 [14.1898%]
+Fetcher(7) total_time=3329 effective_time=2775 loss 554 [16.6416%]
+Fetcher(8) total_time=3538 effective_time=2978 loss 560 [15.8282%]
+Fetcher(9) total_time=3259 effective_time=2703 loss 556 [17.0604%]
+Total time: 4723
+Average loss: 382
+Extractor total_time=3027 effective_time=3023 max_delay=1
+Fetcher(0) total_time=3773 effective_time=3661 loss 112 [2.96846%]
+Fetcher(1) total_time=3332 effective_time=3186 loss 146 [4.38175%]
+Fetcher(2) total_time=3206 effective_time=2996 loss 210 [6.55022%]
+Fetcher(3) total_time=4488 effective_time=3983 loss 505 [11.2522%]
+Fetcher(4) total_time=3284 effective_time=3112 loss 172 [5.23752%]
+Fetcher(5) total_time=3349 effective_time=2829 loss 520 [15.527%]
+Fetcher(6) total_time=3282 effective_time=2762 loss 520 [15.844%]
+Fetcher(7) total_time=3700 effective_time=3128 loss 572 [15.4595%]
+Fetcher(8) total_time=3418 effective_time=2843 loss 575 [16.8227%]
+Fetcher(9) total_time=3294 effective_time=2718 loss 576 [17.4863%]
+Total time: 4489
+Average loss: 390
+
+Extractor total_time=6394 effective_time=6378 max_delay=4
+Fetcher(0) total_time=9143 effective_time=8984 loss 159 [1.73904%]
+Fetcher(1) total_time=6711 effective_time=6530 loss 181 [2.69706%]
+Fetcher(2) total_time=6436 effective_time=6024 loss 412 [6.40149%]
+Fetcher(3) total_time=6583 effective_time=5966 loss 617 [9.37263%]
+Fetcher(4) total_time=7750 effective_time=7555 loss 195 [2.51613%]
+Fetcher(5) total_time=6414 effective_time=5780 loss 634 [9.88463%]
+Fetcher(6) total_time=7264 effective_time=6637 loss 627 [8.63161%]
+Fetcher(7) total_time=6460 effective_time=5759 loss 701 [10.8514%]
+Fetcher(8) total_time=9541 effective_time=8835 loss 706 [7.39964%]
+Fetcher(9) total_time=6676 effective_time=5966 loss 710 [10.6351%]
+Total time: 9541
+Average loss: 494
+Extractor total_time=5732 effective_time=5715 max_delay=4
+Fetcher(0) total_time=16786 effective_time=16655 loss 131 [0.780412%]
+Fetcher(1) total_time=5880 effective_time=5720 loss 160 [2.72109%]
+Fetcher(2) total_time=6554 effective_time=6371 loss 183 [2.79219%]
+Fetcher(3) total_time=5896 effective_time=5368 loss 528 [8.95522%]
+Fetcher(4) total_time=6520 effective_time=6338 loss 182 [2.79141%]
+Fetcher(5) total_time=6249 effective_time=5704 loss 545 [8.7214%]
+Fetcher(6) total_time=6482 effective_time=5954 loss 528 [8.14563%]
+Fetcher(7) total_time=6750 effective_time=6150 loss 600 [8.88889%]
+Fetcher(8) total_time=6061 effective_time=5467 loss 594 [9.80036%]
+Fetcher(9) total_time=6556 effective_time=5951 loss 605 [9.22819%]
+Total time: 16786
+Average loss: 405
+Extractor total_time=5950 effective_time=5931 max_delay=4
+Fetcher(0) total_time=19801 effective_time=19665 loss 136 [0.686834%]
+Fetcher(1) total_time=6148 effective_time=5986 loss 162 [2.635%]
+Fetcher(2) total_time=6282 effective_time=6127 loss 155 [2.46737%]
+Fetcher(3) total_time=11623 effective_time=11164 loss 459 [3.94907%]
+Fetcher(4) total_time=6299 effective_time=6118 loss 181 [2.87347%]
+Fetcher(5) total_time=6448 effective_time=5959 loss 489 [7.58375%]
+Fetcher(6) total_time=6270 effective_time=5783 loss 487 [7.76715%]
+Fetcher(7) total_time=6596 effective_time=6038 loss 558 [8.45967%]
+Fetcher(8) total_time=6305 effective_time=5753 loss 552 [8.75496%]
+Fetcher(9) total_time=6015 effective_time=5453 loss 562 [9.34331%]
+Total time: 19802
+Average loss: 374
+
+Extractor total_time=14293 effective_time=14261 max_delay=4
+Fetcher(0) total_time=14744 effective_time=14564 loss 180 [1.22084%]
+Fetcher(1) total_time=17925 effective_time=17731 loss 194 [1.08229%]
+Fetcher(2) total_time=14300 effective_time=13898 loss 402 [2.81119%]
+Fetcher(3) total_time=14607 effective_time=14109 loss 498 [3.40932%]
+Fetcher(4) total_time=15443 effective_time=15237 loss 206 [1.33394%]
+Fetcher(5) total_time=20087 effective_time=19569 loss 518 [2.57878%]
+Fetcher(6) total_time=15579 effective_time=15074 loss 505 [3.24154%]
+Fetcher(7) total_time=39688 effective_time=39094 loss 594 [1.49667%]
+Fetcher(8) total_time=14409 effective_time=13811 loss 598 [4.15018%]
+Fetcher(9) total_time=14496 effective_time=13890 loss 606 [4.18046%]
+Total time: 39689
+Average loss: 430
+Extractor total_time=10822 effective_time=10791 max_delay=4
+Fetcher(0) total_time=10921 effective_time=10777 loss 144 [1.31856%]
+Fetcher(1) total_time=10922 effective_time=10711 loss 211 [1.93188%]
+Fetcher(2) total_time=10944 effective_time=10547 loss 397 [3.62756%]
+Fetcher(3) total_time=10905 effective_time=10405 loss 500 [4.58505%]
+Fetcher(4) total_time=11051 effective_time=10827 loss 224 [2.02697%]
+Fetcher(5) total_time=11213 effective_time=10727 loss 486 [4.33425%]
+Fetcher(6) total_time=10911 effective_time=10416 loss 495 [4.53671%]
+Fetcher(7) total_time=10931 effective_time=10394 loss 537 [4.91263%]
+Fetcher(8) total_time=11715 effective_time=11158 loss 557 [4.75459%]
+Fetcher(9) total_time=10881 effective_time=10347 loss 534 [4.90764%]
+Total time: 11715
+Average loss: 408
+Extractor total_time=10497 effective_time=10462 max_delay=4
+Fetcher(0) total_time=10572 effective_time=10458 loss 114 [1.07832%]
+Fetcher(1) total_time=15665 effective_time=15478 loss 187 [1.19374%]
+Fetcher(2) total_time=10512 effective_time=10133 loss 379 [3.6054%]
+Fetcher(3) total_time=10833 effective_time=10322 loss 511 [4.71707%]
+Fetcher(4) total_time=35594 effective_time=35414 loss 180 [0.505703%]
+Fetcher(5) total_time=10816 effective_time=10295 loss 521 [4.81694%]
+Fetcher(6) total_time=10623 effective_time=10096 loss 527 [4.96093%]
+Fetcher(7) total_time=40197 effective_time=39660 loss 537 [1.33592%]
+Fetcher(8) total_time=10793 effective_time=10259 loss 534 [4.94765%]
+Fetcher(9) total_time=11837 effective_time=11311 loss 526 [4.44369%]
+Total time: 40199
+Average loss: 401
+
+Extractor total_time=89582 effective_time=89366 max_delay=13
+Fetcher(0) total_time=91638 effective_time=91451 loss 187 [0.204064%]
+Fetcher(1) total_time=89725 effective_time=89461 loss 264 [0.294232%]
+Fetcher(2) total_time=99835 effective_time=99606 loss 229 [0.229378%]
+Fetcher(3) total_time=99779 effective_time=99211 loss 568 [0.569258%]
+Fetcher(4) total_time=89791 effective_time=89515 loss 276 [0.30738%]
+Fetcher(5) total_time=103410 effective_time=102825 loss 585 [0.565709%]
+Fetcher(6) total_time=89821 effective_time=89226 loss 595 [0.662429%]
+Fetcher(7) total_time=90904 effective_time=90256 loss 648 [0.71284%]
+Fetcher(8) total_time=90406 effective_time=89765 loss 641 [0.709024%]
+Fetcher(9) total_time=90341 effective_time=89694 loss 647 [0.716175%]
+Total time: 103411
+Average loss: 464
+Extractor total_time=30872 effective_time=30804 max_delay=4
+Fetcher(0) total_time=30963 effective_time=30768 loss 195 [0.629784%]
+Fetcher(1) total_time=31195 effective_time=30946 loss 249 [0.798205%]
+Fetcher(2) total_time=45029 effective_time=44791 loss 238 [0.528548%]
+Fetcher(3) total_time=53689 effective_time=53131 loss 558 [1.03932%]
+Fetcher(4) total_time=30983 effective_time=30737 loss 246 [0.793984%]
+Fetcher(5) total_time=31388 effective_time=30828 loss 560 [1.78412%]
+Fetcher(6) total_time=37801 effective_time=37335 loss 466 [1.23277%]
+Fetcher(7) total_time=33913 effective_time=33307 loss 606 [1.78693%]
+Fetcher(8) total_time=30949 effective_time=30342 loss 607 [1.96129%]
+Fetcher(9) total_time=33060 effective_time=32445 loss 615 [1.86025%]
+Total time: 53690
+Average loss: 434
+Extractor total_time=52852 effective_time=52674 max_delay=23
+Fetcher(0) total_time=55555 effective_time=55401 loss 154 [0.277203%]
+Fetcher(1) total_time=53373 effective_time=53112 loss 261 [0.489011%]
+Fetcher(2) total_time=54905 effective_time=54676 loss 229 [0.417084%]
+Fetcher(3) total_time=60868 effective_time=60303 loss 565 [0.928238%]
+Fetcher(4) total_time=53593 effective_time=53364 loss 229 [0.427295%]
+Fetcher(5) total_time=63508 effective_time=62919 loss 589 [0.927442%]
+Fetcher(6) total_time=59773 effective_time=59232 loss 541 [0.905091%]
+Fetcher(7) total_time=54457 effective_time=53861 loss 596 [1.09444%]
+Fetcher(8) total_time=60945 effective_time=60373 loss 572 [0.938551%]
+Fetcher(9) total_time=59526 effective_time=58926 loss 600 [1.00796%]
+Total time: 63508
+Average loss: 433
+
+Extractor total_time=118938 effective_time=118600 max_delay=14
+Fetcher(0) total_time=119193 effective_time=119002 loss 191 [0.160244%]
+Fetcher(1) total_time=119173 effective_time=118807 loss 366 [0.307117%]
+Fetcher(2) total_time=120487 effective_time=120006 loss 481 [0.399213%]
+Fetcher(3) total_time=120385 effective_time=119815 loss 570 [0.473481%]
+Fetcher(4) total_time=119210 effective_time=118894 loss 316 [0.265078%]
+Fetcher(5) total_time=121877 effective_time=121323 loss 554 [0.454557%]
+Fetcher(6) total_time=119125 effective_time=118426 loss 699 [0.586779%]
+Fetcher(7) total_time=119426 effective_time=118731 loss 695 [0.58195%]
+Fetcher(8) total_time=119854 effective_time=119165 loss 689 [0.574866%]
+Fetcher(9) total_time=119190 effective_time=118498 loss 692 [0.580586%]
+Total time: 121878
+Average loss: 525
+Extractor total_time=124428 effective_time=123977 max_delay=113
+Fetcher(0) total_time=125202 effective_time=124920 loss 282 [0.225236%]
+Fetcher(1) total_time=144522 effective_time=144177 loss 345 [0.238718%]
+Fetcher(2) total_time=124847 effective_time=124520 loss 327 [0.261921%]
+Fetcher(3) total_time=127435 effective_time=126817 loss 618 [0.484953%]
+Fetcher(4) total_time=125348 effective_time=125021 loss 327 [0.260874%]
+Fetcher(5) total_time=126905 effective_time=126256 loss 649 [0.511406%]
+Fetcher(6) total_time=125827 effective_time=125201 loss 626 [0.497508%]
+Fetcher(7) total_time=125582 effective_time=124915 loss 667 [0.531127%]
+Fetcher(8) total_time=125010 effective_time=124352 loss 658 [0.526358%]
+Fetcher(9) total_time=137119 effective_time=136447 loss 672 [0.490085%]
+Total time: 144522
+Average loss: 517
+Extractor total_time=150197 effective_time=149882 max_delay=13
+Fetcher(0) total_time=150510 effective_time=150193 loss 317 [0.210617%]
+Fetcher(1) total_time=151227 effective_time=150822 loss 405 [0.267809%]
+Fetcher(2) total_time=156300 effective_time=155828 loss 472 [0.301983%]
+Fetcher(3) total_time=150243 effective_time=149631 loss 612 [0.40734%]
+Fetcher(4) total_time=150501 effective_time=150135 loss 366 [0.243188%]
+Fetcher(5) total_time=153127 effective_time=152561 loss 566 [0.369628%]
+Fetcher(6) total_time=150459 effective_time=149815 loss 644 [0.428024%]
+Fetcher(7) total_time=151124 effective_time=150439 loss 685 [0.45327%]
+Fetcher(8) total_time=150421 effective_time=149709 loss 712 [0.473338%]
+Fetcher(9) total_time=150201 effective_time=149435 loss 766 [0.509983%]
+Total time: 156301
+Average loss: 554

@@ -1,0 +1,157 @@
+Решение
+
+Последовательная версия показала, что 99% времени тратится на выкачиваниe веб-страниц(curl_read). 
+Стало ясно, что страницы нужно выкачивать в нескольких тредах. Я подумал, что подойдет схема из n тредов-загрузчиков
+и 1 треда мастера. Мастер должен парсить страницы, убирать из найденных линков уже посещенные, сохранять страницы на диск.
+Сомнение вызвало, что схема получается сильно централизованной, значит мастер должен быстро выполнять свои операции, чтобы
+быть достаточно отзывчивым для взаимодействия с остальными тредами. Дальнейшие замеры показали, что в среднем на парсинг +
+сохранение на диск уходит 5-10 мс. В программе тред-загрузчик назвается fetcher, мастер - extractor.
+
+Для обмена данными по каждому каналу завел два std::vector и один флаг std::atomic<int>. В каждый момент времени producer пишет 
+в один вектор, consumer читает из другого. При помощи флага происходит обмен векторами следующим образом. Если consumer считал 
+все данные, то он переводит флаг из 0 в 1 и ничего не читает. Дальше producer видит, что флаг = 1, перестает писать в свой 
+вектор и переключается на второй вектор, переводит флаг из 1 в 2. Consumer видит, что флаг = 2, переключается на второй вектор
+и читает из него.
+
+Мастер на каждой итерации цикла обрабатывает данные одного fetcher'а, парсит и сохраняет страницы, проверяет и обновляет список
+посещенных страниц, переключает флаги. Свежие линки равномерно раскладываются между векторами всех fetcher'ов. Также
+мастер следит за общим количеством линков, при достижении порога заканчивает работу. Дополнительно мастер отслеживает
+ситуацию, когда линки закончились раньше достижения порога; проверяется следующее условие: fecther'ы просят новые линки,
+мастер просит новые страницы, у мастера закончились новые линки и больше не появятся (гарантируется, что fecther просит 
+новые линки после того, как последний curl_read отработал).
+
+
+Эксперименты
+
+Программа запускалась по 3 раза с разными количеством fetcher-тредов
+
+$ for i in 1 2 5 10 25 50; do  ./crawler www.ya.ru 5 200 /home/vlad/crawler/pages/ $i >> log; ./crawler www.ya.ru 5 200 /home/vlad/crawler/pages/ $i >> log; ./crawler www.ya.ru 5 200 /home/vlad/crawler/pages/ $i >> log; echo >> log; done
+
+В архиве приложен файл log.
+
+Общее время программы в некотрых случаях значительно превышает время работы мастер-потока, поскольку fetcher не проверяет
+стоп-флаг до тех пор, пока не докачает последнюю страницу. Однако результат - сохраненные на диск страницы - доступен сразу 
+после завершения работы мастера, поэтому я привожу время работы мастера. 
+
+$ cat log | grep Extractor
+
+Extractor total_time=196627 effective_time=196561 max_delay=4
+Extractor total_time=175469 effective_time=175406 max_delay=4
+Extractor total_time=239892 effective_time=239825 max_delay=4
+
+Extractor total_time=85481 effective_time=85430 max_delay=4
+Extractor total_time=110836 effective_time=110780 max_delay=4
+Extractor total_time=107823 effective_time=107766 max_delay=4
+
+Extractor total_time=31529 effective_time=31502 max_delay=2
+Extractor total_time=25012 effective_time=24992 max_delay=2
+Extractor total_time=22867 effective_time=22818 max_delay=30
+
+Extractor total_time=14401 effective_time=14376 max_delay=13
+Extractor total_time=16428 effective_time=16390 max_delay=13
+Extractor total_time=14485 effective_time=14460 max_delay=2
+
+Extractor total_time=15830 effective_time=15794 max_delay=13
+Extractor total_time=13297 effective_time=13264 max_delay=4
+Extractor total_time=14412 effective_time=14392 max_delay=3
+
+Extractor total_time=9524 effective_time=9468 max_delay=10
+Extractor total_time=29629 effective_time=29507 max_delay=20
+Extractor total_time=15025 effective_time=14989 max_delay=4
+
+Видно, что для 1 2 5 10 тредов ускорение меняется линенйно, дальше ускорение не меняется, возможно из-за пропускной 
+способности канала, и падает, из-за накладных расходов на межнитевую коммуникацию
+Лучшая скорость - 20 страниц/сек
+
+Также замерил неэффективное время fetcher'ов. Эффективное - это, когда работает curl_read
+
+$ cat log | grep Average
+Average loss: 108
+Average loss: 108
+Average loss: 111
+
+Average loss: 128
+Average loss: 122
+Average loss: 1126
+
+Average loss: 280
+Average loss: 260
+Average loss: 292
+
+Average loss: 508
+Average loss: 518
+Average loss: 407
+
+Average loss: 672
+Average loss: 516
+Average loss: 762
+
+Average loss: 822
+Average loss: 1698
+Average loss: 1090
+
+Видно, что на 10 25 50 рост потерь значительно меньше линейного
+
+
+Теперь интересно посмотреть показатели с фиксированным количеством тредов (например, 10) и разным максимальным
+количеством загружаемых страниц
+
+$ for i in 50 100 200 500 1000; do  ./crawler www.ya.ru 5 $i /home/vlad/crawler/pages/ 10 >> log1; ./crawler www.ya.ru 5 $i /home/vlad/crawler/pages/ 10 >> log1; ./crawler www.ya.ru 5 $i /home/vlad/crawler/pages/ 10 >> log1; echo >> log1; done
+
+В архиве приложен файл log1.
+
+$ cat log1 | grep Extractor
+Extractor total_time=2893 effective_time=2890 max_delay=1
+Extractor total_time=3188 effective_time=3184 max_delay=1
+Extractor total_time=3027 effective_time=3023 max_delay=1
+
+Extractor total_time=6394 effective_time=6378 max_delay=4
+Extractor total_time=5732 effective_time=5715 max_delay=4
+Extractor total_time=5950 effective_time=5931 max_delay=4
+
+Extractor total_time=14293 effective_time=14261 max_delay=4
+Extractor total_time=10822 effective_time=10791 max_delay=4
+Extractor total_time=10497 effective_time=10462 max_delay=4
+
+Extractor total_time=89582 effective_time=89366 max_delay=13
+Extractor total_time=30872 effective_time=30804 max_delay=4
+Extractor total_time=52852 effective_time=52674 max_delay=23
+
+Extractor total_time=118938 effective_time=118600 max_delay=14
+Extractor total_time=124428 effective_time=123977 max_delay=113
+Extractor total_time=150197 effective_time=149882 max_delay=13
+
+50 100 200 - скорость стабильно ~16 страниц/сек
+500 100 - скорость упала до ~8 страниц/сек, возможно потому что качались страницы с менее быстрых доменов
+
+
+$ cat log1 | grep Average
+Average loss: 393
+Average loss: 382
+Average loss: 390
+
+Average loss: 494
+Average loss: 405
+Average loss: 374
+
+Average loss: 430
+Average loss: 408
+Average loss: 401
+
+Average loss: 464
+Average loss: 434
+Average loss: 433
+
+Average loss: 525
+Average loss: 517
+Average loss: 554
+
+Рост потерь значительно меньше линейного
+
+
+Компиляция
+sudo apt-get install libboost-regex-dev  libboost-filesystem-dev libboost-system-dev
+./build.sh
+
+Запуск
+./crawler www.ya.ru 5 200 /home/vlad/crawler/pages/ 3 # start_url = www.ya.ru, max_depth = 5, max_count = 200, storage = /home/vlad/crawler/pages/, fetchers_thread_num = 3
